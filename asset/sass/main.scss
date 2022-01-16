@@ -69,4 +69,89 @@ img {
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    &__menu {
+        @media screen and (max-width:768px){
+            position: fixed;
+            top: 0;
+            right: -50%;
+            width: 70%;
+            height: 100%;
+            padding:3.5rem 1.5rem 0;
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            transition: .5s;
+        }
+    }
+    &__close {
+        position: absolute;
+        // giá trị absolute làm thay đổi vị trí của phần tử một cách tuyệt đối so với phần tử cha và thằng khác có thể nằm đè lên vị trí cũ của nó
+        top: .75rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    &__item {
+        margin-bottom: 2rem;
+    }
+    &__close, &__link, &__logo ,&__toggle {
+        color: var(--white-color);
+    }
+    &__link {
+        &:hover {
+            color: var(--first-color-dark);
+        }
+    }
+    &__toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
 }
+.home {
+    background-color: var(--first-color);
+    overflow: hidden;
+
+    &__container {
+        height: caclc(100vh - var(--header-height));
+        grid-template-rows: repeat(2,max-content);
+        row-gap: 1.5rem;
+    }
+    &__img {
+        position: relative;
+    // giá trị relative làm thay đổi vị trí tương đối so với chính nó và vị trí cũ này thằng khác không đè lên được
+    padding-top: 1.5rem;
+    justify-self: center;
+    width: 302px;
+    height: 233px;
+    & img {
+        position: absolute;
+        // giá trị absolute làm thay đổi vị trí tuyệt đối so với thằng cha có chứa position và thằng khác có thể chiếm lên nó
+        left: 0;
+        top: 0;
+    }
+    }
+    &__data {
+        color: var(--white-color);
+    }
+    &__title {
+        font-size: var(--big-font-size);
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    &__description  {
+        margin-bottom: 2.5rem;
+    }
+    &__button {
+        display: inline-block;
+        background-color: var(--first-color-dark);
+        color: var(--white-color);
+        padding: 1.125rem 2rem;
+        border-radius: .5rem;
+
+        &:hover {
+            background-color: var(--first-color-darken);
+        }
+    }
+}
+
