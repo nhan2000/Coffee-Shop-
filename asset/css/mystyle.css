@@ -64,6 +64,8 @@ img {
   left: 0;
   z-index: var(--z-fixed);
   background-color: var(--first-color);
+  height: var(--header-height);
+  padding: 20px;
 }
 
 .nav {
